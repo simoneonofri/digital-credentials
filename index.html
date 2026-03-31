@@ -132,7 +132,7 @@ ul.index code{color:inherit}
 #index-defined-here .print-only{display:initial}
 }
 </style>
-<meta name="revision" content="8eece281c86b5b51a75b39138c599a654a8e0944">
+<meta name="revision" content="7e176bf41d3b5be54884db978dbf1c477c9f48e5">
 <meta name="description" content="This document specifies an API to enable user agents to mediate
         presentation and issuance of digital credentials such as a driver's
         license, government-issued identification card, and/or other types of digital credential. The API builds on
@@ -270,16 +270,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "xref": {
     "profile": "web-platform"
   },
-  "gitRevision": "8eece281c86b5b51a75b39138c599a654a8e0944",
-  "publishISODate": "2026-03-30T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 30 March 2026"
+  "gitRevision": "7e176bf41d3b5be54884db978dbf1c477c9f48e5",
+  "publishISODate": "2026-03-31T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 31 March 2026"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body data-cite="WEBIDL credential-management vc-data-model HTML INFRA URL WEBIDL DOM FETCH" class="h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Digital Credentials</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-03-30">30 March 2026</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-03-31">31 March 2026</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -1951,22 +1951,23 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
         wallet to determine that a request was not modified after creation. In
         general, this is expected to be achieved by signing the request at the
         exchange protocol layer, and the wallet is expected to verify it.<br>
-        These mechanisms reduce request-tampering, including modification
-        of the request after creation or during transport. For example using
+        These mechanisms reduce request-tampering, including modification of
+        the request after creation or during transport. For example using
         @@parameter in @@protocol.
       </p>
       </section><section id="response-integrity"><div class="header-wrapper"><h4 id="x10-3-2-response-integrity"><bdi class="secno">10.3.2 </bdi>
         Response Integrity
       </h4><a class="self-link" href="#response-integrity" aria-label="Permalink for Section 10.3.2"></a></div>
       <p>
-        Protocols used with this API <em class="rfc2119">MUST</em> define mechanisms that allow the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier" id="ref-for-index-term-verifier-6">verifier</a> (during presentation) or the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-issuers" id="ref-for-index-term-issuer-6">issuer</a> (during issuance) to determine that the returned response was not modified
-        after issuance or presentation. In general, this is expected to be
-        achieved through the integrity protection mechanisms provided by the
-        underlying protocol, and the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier" id="ref-for-index-term-verifier-7">verifiers</a> are expected to verify
-        it.
-        These mechanisms reduce protocol-layer response-tampering,
-        including modification of the response after creation or during
-        transport. For example using @@parameter in @@protocol.
+        Protocols used with this API <em class="rfc2119">MUST</em> define mechanisms that allow the
+        <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier" id="ref-for-index-term-verifier-6">verifier</a> (during presentation) or the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-issuers" id="ref-for-index-term-issuer-6">issuer</a> (during issuance)
+        to determine that the returned response was not modified after issuance
+        or presentation. In general, this is expected to be achieved through
+        the integrity protection mechanisms provided by the underlying
+        protocol, and the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier" id="ref-for-index-term-verifier-7">verifiers</a> are expected to verify it. These
+        mechanisms reduce protocol-layer response-tampering, including
+        modification of the response after creation or during transport. For
+        example using @@parameter in @@protocol.
       </p>
     </section></section></section>
     <section class="informative" data-cite="privacy-principles" id="privacy-considerations"><div class="header-wrapper"><h2 id="x11-privacy-considerations"><bdi class="secno">11. </bdi>

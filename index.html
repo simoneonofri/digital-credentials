@@ -132,7 +132,7 @@ ul.index code{color:inherit}
 #index-defined-here .print-only{display:initial}
 }
 </style>
-<meta name="revision" content="d2857be2eba683f57caa61359d0d265c05cc07f2">
+<meta name="revision" content="4ccd63e675e359c91978ba83796936a291594764">
 <meta name="description" content="This document specifies an API to enable user agents to mediate
         presentation and issuance of digital credentials such as a driver's
         license, government-issued identification card, and/or other types of digital credential. The API builds on
@@ -270,7 +270,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "xref": {
     "profile": "web-platform"
   },
-  "gitRevision": "d2857be2eba683f57caa61359d0d265c05cc07f2",
+  "gitRevision": "4ccd63e675e359c91978ba83796936a291594764",
   "publishISODate": "2026-04-07T00:00:00.000Z",
   "generatedSubtitle": "W3C Editor's Draft 07 April 2026"
 }</script>
@@ -1902,7 +1902,9 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
           <dfn id="dfn-request-tampering" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Request Tampering</dfn>
         </dt>
         <dd>
-          Modification of a protocol request after it is created by the
+          Modification of a <a data-link-type="dfn|abstract-op" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-19">presentation protocols</a> or 
+          <a data-link-type="dfn|abstract-op" href="#dfn-issuance-protocol" class="internalDFN" id="ref-for-dfn-issuance-protocol-18">Issuance protocols</a> request or response after
+          it is created by the
           <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier" id="ref-for-index-term-verifier-5">verifiers</a>. This threat is expected to be addressed by the
           underlying exchange protocol; for example, through signing and
           validating requests.
@@ -2039,7 +2041,7 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
         </p>
         <p>
           The API provides the connection interface between <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier" id="ref-for-index-term-verifier-9">verifiers</a> and
-          <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders" id="ref-for-index-term-holder-14">holders</a>, i.e. the means by which a <a data-link-type="dfn|abstract-op" data-lt="presentation protocol" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-19">credential presentation protocol</a>
+          <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders" id="ref-for-index-term-holder-14">holders</a>, i.e. the means by which a <a data-link-type="dfn|abstract-op" data-lt="presentation protocol" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-20">credential presentation protocol</a>
           is initiated and the user switches to the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders" id="ref-for-index-term-holder-15">holder</a> application to
           select a credential. Solutions that have been used for this purpose
           in the past include QR codes and custom URL schemes. As documented in
@@ -2051,7 +2053,7 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
           ecosystem demand and regulatory mandates, the Web platform offers an
           alternative to the aforementioned less-desirable technologies that is
           easy to use for developers, is compatible with existing credential
-          <a data-link-type="dfn|abstract-op" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-20">presentation protocols</a> and, most importantly,
+          <a data-link-type="dfn|abstract-op" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-21">presentation protocols</a> and, most importantly,
           has better user privacy, security, and accessibility properties than
           these alternatives.
         </p>
@@ -2108,7 +2110,7 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
         
         <p>
           Because the Digital Credentials API sits at the center of an exchange
-          that involves multiple independent parties, the <a data-link-type="dfn|abstract-op" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-21">presentation protocol</a> and credential format used by
+          that involves multiple independent parties, the <a data-link-type="dfn|abstract-op" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-22">presentation protocol</a> and credential format used by
           these parties for exchanging user information are crucial to the
           <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent" id="ref-for-index-term-user-agents-0-15">user agent</a>'s goal of protecting user privacy.
         </p>
@@ -2618,7 +2620,7 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
           Revealing device properties through protocol availability
         </h4><a class="self-link" href="#revealing-device-properties-through-protocol-availability" aria-label="Permalink for Section 11.5.3"></a></div>
         <p>
-          The Digital Credentials API exposes information about which <a data-link-type="dfn|abstract-op" data-lt="presentation protocol" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-22">presentation</a> and <a data-link-type="dfn|abstract-op" data-lt="issuance protocol" href="#dfn-issuance-protocol" class="internalDFN" id="ref-for-dfn-issuance-protocol-18">issuance</a> protocols are supported by
+          The Digital Credentials API exposes information about which <a data-link-type="dfn|abstract-op" data-lt="presentation protocol" href="#dfn-presentation-protocol" class="internalDFN" id="ref-for-dfn-presentation-protocol-23">presentation</a> and <a data-link-type="dfn|abstract-op" data-lt="issuance protocol" href="#dfn-issuance-protocol" class="internalDFN" id="ref-for-dfn-issuance-protocol-19">issuance</a> protocols are supported by
           the <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent" id="ref-for-index-term-user-agents-0-40">user agent</a> through
           <a data-link-type="idl" data-lt="userAgentAllowsProtocol()" href="#dom-digitalcredential-useragentallowsprotocol" class="internalDFN" id="ref-for-dom-digitalcredential-useragentallowsprotocol-4"><code>userAgentAllowsProtocol</code></a><code>()</code>. It mitigates browser
           fingerprinting and revealing information about the user's device
@@ -3439,7 +3441,9 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
     </li><li>
       <a href="#ref-for-dfn-issuance-protocol-17" title="§ 7.8.2 The DigitalCredentialIssuanceProtocol enumeration">§ 7.8.2 The DigitalCredentialIssuanceProtocol enumeration</a> 
     </li><li>
-      <a href="#ref-for-dfn-issuance-protocol-18" title="§ 11.5.3 Revealing device properties through protocol availability">§ 11.5.3 Revealing device properties through protocol availability</a> 
+      <a href="#ref-for-dfn-issuance-protocol-18" title="§ 10.1.2 Out of Scope Threats">§ 10.1.2 Out of Scope Threats</a> 
+    </li><li>
+      <a href="#ref-for-dfn-issuance-protocol-19" title="§ 11.5.3 Revealing device properties through protocol availability">§ 11.5.3 Revealing device properties through protocol availability</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-issuance-request" aria-label="Links in this document to definition: Issuance request">
@@ -3527,11 +3531,13 @@ interface <a class="internalDFN idlID" data-link-type="interface" href="#dom-dig
     </li><li>
       <a href="#ref-for-dfn-presentation-protocol-18" title="§ 7.8.1 The DigitalCredentialPresentationProtocol enumeration">§ 7.8.1 The DigitalCredentialPresentationProtocol enumeration</a> 
     </li><li>
-      <a href="#ref-for-dfn-presentation-protocol-19" title="§ 11.1 Design Considerations and Alternatives">§ 11.1 Design Considerations and Alternatives</a> <a href="#ref-for-dfn-presentation-protocol-20" title="Reference 2">(2)</a> 
+      <a href="#ref-for-dfn-presentation-protocol-19" title="§ 10.1.2 Out of Scope Threats">§ 10.1.2 Out of Scope Threats</a> 
     </li><li>
-      <a href="#ref-for-dfn-presentation-protocol-21" title="§ 11.3 Presentation Protocol and Credential Format">§ 11.3 Presentation Protocol and Credential Format</a> 
+      <a href="#ref-for-dfn-presentation-protocol-20" title="§ 11.1 Design Considerations and Alternatives">§ 11.1 Design Considerations and Alternatives</a> <a href="#ref-for-dfn-presentation-protocol-21" title="Reference 2">(2)</a> 
     </li><li>
-      <a href="#ref-for-dfn-presentation-protocol-22" title="§ 11.5.3 Revealing device properties through protocol availability">§ 11.5.3 Revealing device properties through protocol availability</a> 
+      <a href="#ref-for-dfn-presentation-protocol-22" title="§ 11.3 Presentation Protocol and Credential Format">§ 11.3 Presentation Protocol and Credential Format</a> 
+    </li><li>
+      <a href="#ref-for-dfn-presentation-protocol-23" title="§ 11.5.3 Revealing device properties through protocol availability">§ 11.5.3 Revealing device properties through protocol availability</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-presentation-request" aria-label="Links in this document to definition: Presentation request">

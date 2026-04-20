@@ -176,7 +176,7 @@
       <li>many other scenarios as described in [[[vc-use-cases]]]
       </li>
     </ul>
-    <section class="informative">
+    <section>
       <!--
       // MARK: Examples of usage
       -->
@@ -187,7 +187,7 @@
         The following examples illustrate how the Digital Credentials API can
         be used to request and issue digital credentials.
       </p>
-      <h3>
+      <h3 class="informative">
         Feature Detection
       </h3>
       <p>
@@ -1559,12 +1559,10 @@
       </p>
       <dl>
         <dt>
-          <dfn>Network Tampering</dfn>
+          <dfn>Tampering requests through the networks</dfn>
         </dt>
         <dd>
-          A network attacker that can inject or modify page content in an
-          insecure context attempts to alter a {{DigitalCredentialGetRequest}}
-          or {{DigitalCredentialCreateRequest}} before processing.
+          An attacker attempts to alter a {{DigitalCredentialGetRequest}} or {{DigitalCredentialCreateRequest}} on the wire.
         </dd>
         <dt>
           <dfn>Unauthorized Cross-Origin Access</dfn>
@@ -1594,7 +1592,7 @@
           Modification of a [=digital credential/presentation protocols=] or 
           [=digital credential/Issuance protocols=] request or response after
           it is created by the
-          [=verifiers=]. This threat is expected to be addressed by the
+          [=verifier=], [=holder=], or the [=issuer=]. This threat is expected to be addressed by the
           underlying exchange protocol; for example, through signing and
           validating requests.
         </dd>
@@ -1657,7 +1655,7 @@
       </h4>
       <p>
         Protocols used with this API MUST define mechanisms that allow a
-        wallet to determine that a request was not modified after creation. In
+        [=verifier=], [=issuer=], or [=holder=] to determine that a request was not modified after creation. In
         general, this is expected to be achieved by signing the request at the
         exchange protocol layer, and the wallet is expected to verify it.
       </p>

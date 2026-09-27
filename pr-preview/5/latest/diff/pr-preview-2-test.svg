@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80">
+  <rect width="320" height="80" rx="8" fill="white" stroke="black"/>
+  <text x="160" y="48" text-anchor="middle" font-family="sans-serif" font-size="20">PR Preview 2 ReSpec</text>
+</svg>

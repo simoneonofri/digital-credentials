@@ -347,6 +347,26 @@ jobs:
           curl --fail --show-error --location --retry 3 --max-time 90 "$DIFF_URL" -o "pages/$SNAPSHOT/diff/index.html"
           test -s "pages/$SNAPSHOT/diff/index.html"
 
+          # HTML Diff preserves relative asset URLs from the compared documents.
+          # Mirror BASE then HEAD assets into diff/, preserving relative paths;
+          # HEAD wins on conflicts. Never overwrite the generated diff index.html.
+          python3 - "pages/$SNAPSHOT/base" "pages/$SNAPSHOT/head" "pages/$SNAPSHOT/diff" <<'PY'
+          from pathlib import Path
+          import shutil, sys
+
+          base, head, dest = map(Path, sys.argv[1:4])
+          for source in (base, head):
+              for src in source.rglob("*"):
+                  if not src.is_file():
+                      continue
+                  rel = src.relative_to(source)
+                  if rel.as_posix() == "index.html":
+                      continue
+                  target = dest / rel
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, target)
+          PY
+
           python3 - "pages/$SNAPSHOT/index.html" <<'PY'
           from pathlib import Path
           import sys
